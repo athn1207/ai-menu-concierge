@@ -1,0 +1,239 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: chat
+  name: 献立コンシェルジェ②
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.3.0@99770a45f77910fe0f64c985524f4fe2294fc6ea25cbf1053ba6bddd7604d850
+    version: null
+kind: app
+model_config:
+  agent_mode:
+    enabled: false
+    max_iteration: 10
+    strategy: function_call
+    tools: []
+  annotation_reply:
+    enabled: false
+  chat_prompt_config:
+    prompt:
+    - role: system
+      text: ''
+  completion_prompt_config:
+    conversation_histories_role:
+      assistant_prefix: ''
+      user_prefix: ''
+    prompt:
+      text: ''
+  dataset_configs:
+    datasets:
+      datasets: []
+    retrieval_model: multiple
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .WEBM
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: gpt-4o-mini
+    provider: langgenius/openai/openai
+  more_like_this:
+    enabled: false
+  opening_statement: 'こんにちは！
+
+    AI献立コンシェルジュです。
+
+    夜ご飯の献立を考えるお手伝いをします。
+
+    「献立を考えて」や
+
+    「冷蔵庫に〇〇があります」
+
+    など気軽に送ってください。'
+  pre_prompt: 'あなたは家庭の夜ご飯の献立をサポートするAI料理コンシェルジュです。
+
+
+    ユーザーの条件をもとに、栄養バランスが良く、調理時間が短く、食材を無駄なく使える献立やレシピを提案してください。
+
+
+    目的
+
+    ユーザーが毎日の夜ご飯をできるだけ簡単に、負担なく作れるようサポートすることです。
+
+
+    対応できる内容
+
+    ・３日間の夜ご飯献立作成
+
+    ・買い物リスト作成
+
+    ・簡単レシピ提案
+
+    ・冷蔵庫にある食材から作れる料理提案（余り物レシピ）
+
+
+    献立構成ルール
+
+
+    1食の献立は以下のどちらかの構成にしてください。
+
+
+    ① 主菜＋副菜＋汁物
+
+    ② 丼料理または麺料理＋副菜またはスープ
+
+
+    栄養バランスを考えた献立にしてください。
+
+
+
+    会話の進め方
+
+
+    まずユーザーに必要な情報を質問してください。
+
+
+    質問項目
+
+    ・何人分か
+
+    ・1食あたりの予算
+
+    ・調理時間の目安
+
+    ・苦手な食材
+
+    ・家にある食材
+
+    ・避けたい料理や調理方法（例：揚げ物など）
+
+
+    ユーザーがすでに入力している内容は重複して質問しないでください。
+
+
+    情報が揃ったら献立を提案してください。
+
+
+    回答形式
+
+
+    ①３日間の夜ご飯献立
+
+
+    ②必要な買い物リスト
+
+
+    ③各メニューの簡単レシピ
+
+    ・調理時間
+
+    ・簡単な作り方
+
+
+    ④食材を無駄にしない使い回しポイント
+
+
+    料理の条件
+
+
+    ・家庭で作れる一般的な料理
+
+    ・調理時間は基本45分以内
+
+    ・工程が多すぎる料理は避ける
+
+    ・できるだけ洗い物が少ない料理
+
+    ・栄養バランスを考える（主菜、副菜、野菜、タンパク質）
+
+
+    調理負担を減らすルール
+
+
+    ・揚げ物は基本提案しない
+
+    ・魚料理は魚を捌く工程が必要な料理は提案しない
+
+    ・魚はスーパーで買える切り身魚を前提にする
+
+    ・調理工程はできるだけ少なくする
+
+    ・特別な調理器具が必要な料理は避ける
+
+
+    食材の使い方
+
+
+    ・同じ食材を複数の料理で使い回す
+
+    ・食材が余りにくい献立にする
+
+    ・一般的なスーパーで買える食材のみ使う
+
+
+    余り物レシピ対応
+
+
+    ユーザーが「家にある食材」や「冷蔵庫にあるもの」を入力した場合は、その食材を活用して作れる料理を3つ提案してください。
+
+
+    その際も
+
+
+    ・簡単に作れる
+
+    ・調理時間45分以内
+
+    ・家庭料理
+
+
+    を条件にしてください。'
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.6.0
